@@ -266,7 +266,6 @@
 //틱택토 게임 끝 ===================================================
 
 
-
 // 리액트 생각하기
 //
 // function ProductCategoryRow({ category }) {
@@ -479,9 +478,9 @@
 // }
 
 
-import { useState } from 'react';
+import {useState} from 'react';
 
-function FilterableProductTable({ products }) {
+function FilterableProductTable({products}) {
     const [filterText, setFilterText] = useState('');
     const [inStockOnly, setInStockOnly] = useState(false);
 
@@ -491,16 +490,16 @@ function FilterableProductTable({ products }) {
                 filterText={filterText}
                 inStockOnly={inStockOnly}
                 onFilterTextChange={setFilterText}
-                onInStockOnlyChange={setInStockOnly} />
+                onInStockOnlyChange={setInStockOnly}/>
             <ProductTable
                 products={products}
                 filterText={filterText}
-                inStockOnly={inStockOnly} />
+                inStockOnly={inStockOnly}/>
         </div>
     );
 }
 
-function ProductCategoryRow({ category }) {
+function ProductCategoryRow({category}) {
     return (
         <tr>
             <th colSpan="2">
@@ -510,9 +509,9 @@ function ProductCategoryRow({ category }) {
     );
 }
 
-function ProductRow({ product }) {
+function ProductRow({product}) {
     const name = product.stocked ? product.name :
-        <span style={{ color: 'red' }}>
+        <span style={{color: 'red'}}>
       {product.name}
     </span>;
 
@@ -524,7 +523,7 @@ function ProductRow({ product }) {
     );
 }
 
-function ProductTable({ products, filterText, inStockOnly }) {
+function ProductTable({products, filterText, inStockOnly}) {
     const rows = [];
     let lastCategory = null;
 
@@ -543,13 +542,13 @@ function ProductTable({ products, filterText, inStockOnly }) {
             rows.push(
                 <ProductCategoryRow
                     category={product.category}
-                    key={product.category} />
+                    key={product.category}/>
             );
         }
         rows.push(
             <ProductRow
                 product={product}
-                key={product.name} />
+                key={product.name}/>
         );
         lastCategory = product.category;
     });
@@ -578,12 +577,12 @@ function SearchBar({
             <input
                 type="text"
                 value={filterText} placeholder="Search..."
-                onChange={(e) => onFilterTextChange(e.target.value)} />
+                onChange={(e) => onFilterTextChange(e.target.value)}/>
             <label>
                 <input
                     type="checkbox"
                     checked={inStockOnly}
-                    onChange={(e) => onInStockOnlyChange(e.target.checked)} />
+                    onChange={(e) => onInStockOnlyChange(e.target.checked)}/>
                 {' '}
                 Only show products in stock
             </label>
@@ -601,5 +600,5 @@ const PRODUCTS = [
 ];
 
 export default function App() {
-    return <FilterableProductTable products={PRODUCTS} />;
+    return <FilterableProductTable products={PRODUCTS}/>;
 }
