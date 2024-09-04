@@ -44,7 +44,6 @@
 // }
 
 
-
 // const today = new Date();
 //
 // function formatDate(date) {
@@ -98,8 +97,6 @@
 //         </div>
 //     );
 // }
-
-
 
 
 // export default function Profile() {
@@ -207,40 +204,67 @@
 //     );
 // }
 
-function Item({ name, isPacked }) {
-    let itemContent = name;
-    if (isPacked) {
-        itemContent = (
-            <del>
-                {name + " ✔"}
-            </del>
-        );
-    }
-    return (
-        <li className="item">
-            {itemContent}
-        </li>
-    );
-}
+// function Item({ name, isPacked }) {
+//     let itemContent = name;
+//     if (isPacked) {
+//         itemContent = (
+//             <del>
+//                 {name + " ✔"}
+//             </del>
+//         );
+//     }
+//     return (
+//         <li className="item">
+//             {itemContent}
+//         </li>
+//     );
+// }
+//
+// export default function PackingList() {
+//     return (
+//         <section>
+//             <h1>Sally Ride's Packing List</h1>
+//             <ul>
+//                 <Item
+//                     isPacked={true}
+//                     name="Space suit"
+//                 />
+//                 <Item
+//                     isPacked={true}
+//                     name="Helmet with a golden leaf"
+//                 />
+//                 <Item
+//                     isPacked={false}
+//                     name="Photo of Tam"
+//                 />
+//             </ul>
+//         </section>
+//     );
+// }
 
-export default function PackingList() {
-    return (
-        <section>
-            <h1>Sally Ride's Packing List</h1>
-            <ul>
-                <Item
-                    isPacked={true}
-                    name="Space suit"
-                />
-                <Item
-                    isPacked={true}
-                    name="Helmet with a golden leaf"
-                />
-                <Item
-                    isPacked={false}
-                    name="Photo of Tam"
-                />
-            </ul>
-        </section>
+const people = [{
+    id: 0,
+    name: 'Creola Katherine Johnson',
+    profession: 'mathematician',
+}, {
+    id: 1,
+    name: 'Mario José Molina-Pasquel Henríquez',
+    profession: 'chemist',
+}, {
+    id: 2,
+    name: 'Mohammad Abdus Salam',
+    profession: 'physicist',
+}, {
+    name: 'Percy Lavon Julian',
+    profession: 'chemist',
+}, {
+    name: 'Subrahmanyan Chandrasekhar',
+    profession: 'astrophysicist',
+}];
+
+export default function List() {
+    const listItems = people.map(person =>
+        <li>{person}</li>
     );
+    return <ul>{listItems}</ul>;
 }
