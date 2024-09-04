@@ -74,30 +74,30 @@
 // }
 
 
-function Avatar({ person, size })  {
-    return (
-        <img
-            className="avatar"
-            src="https://i.imgur.com/1bX5QH6.jpg"
-            alt="Lin Lanying"
-            width={100}
-            height={100}
-        />
-    );
-}
-
-export default function Profile({ person, size, isSepia, thickBorder }) {
-    return (
-        <div className="card">
-            <Avatar
-                person={person}
-                size={size}
-                isSepia={isSepia}
-                thickBorder={thickBorder}
-            />
-        </div>
-    );
-}
+// function Avatar({ person, size })  {
+//     return (
+//         <img
+//             className="avatar"
+//             src="https://i.imgur.com/1bX5QH6.jpg"
+//             alt="Lin Lanying"
+//             width={100}
+//             height={100}
+//         />
+//     );
+// }
+//
+// export default function Profile({ person, size, isSepia, thickBorder }) {
+//     return (
+//         <div className="card">
+//             <Avatar
+//                 person={person}
+//                 size={size}
+//                 isSepia={isSepia}
+//                 thickBorder={thickBorder}
+//             />
+//         </div>
+//     );
+// }
 
 
 
@@ -112,3 +112,135 @@ export default function Profile({ person, size, isSepia, thickBorder }) {
 // }
 
 
+// function Item({ name, isPacked }) {
+//     if (isPacked) {
+//         return <li className="item">{name} ✔</li>;
+//     }
+//     return <li className="item">{name}</li>;
+// }
+//
+// export default function PackingList() {
+//     return (
+//         <section>
+//             <h1>Sally Ride's Packing List</h1>
+//             <ul>
+//                 <Item
+//                     isPacked={true}
+//                     name="Space suit"
+//                 />
+//                 <Item
+//                     isPacked={true}
+//                     name="Helmet with a golden leaf"
+//                 />
+//                 <Item
+//                     isPacked={false}
+//                     name="Photo of Tam"
+//                 />
+//             </ul>
+//         </section>
+//     );
+// }
+
+// function Item({ name, isPacked }) {
+//     if (isPacked) {
+//         return null;
+//     }
+//     return <li className="item">{name}</li>;
+// }
+//
+// export default function PackingList() {
+//     return (
+//         <section>
+//             <h1>Sally Ride's Packing List</h1>
+//             <ul>
+//                 <Item
+//                     isPacked={true}
+//                     name="Space suit"
+//                 />
+//                 <Item
+//                     isPacked={true}
+//                     name="Helmet with a golden leaf"
+//                 />
+//                 <Item
+//                     isPacked={false}
+//                     name="Photo of Tam"
+//                 />
+//             </ul>
+//         </section>
+//     );
+// }
+
+
+// function Item({ name, isPacked }) {
+//     return (
+//         <li className="item">
+//             {isPacked ? (
+//                 <del>
+//                     {name + ' ✔'}
+//                 </del>
+//             ) : (
+//                 name
+//             )}
+//         </li>
+//     );
+// }
+//
+// export default function PackingList() {
+//     return (
+//         <section>
+//             <h1>Sally Ride's Packing List</h1>
+//             <ul>
+//                 <Item
+//                     isPacked={true}
+//                     name="Space suit"
+//                 />
+//                 <Item
+//                     isPacked={true}
+//                     name="Helmet with a golden leaf"
+//                 />
+//                 <Item
+//                     isPacked={false}
+//                     name="Photo of Tam"
+//                 />
+//             </ul>
+//         </section>
+//     );
+// }
+
+function Item({ name, isPacked }) {
+    let itemContent = name;
+    if (isPacked) {
+        itemContent = (
+            <del>
+                {name + " ✔"}
+            </del>
+        );
+    }
+    return (
+        <li className="item">
+            {itemContent}
+        </li>
+    );
+}
+
+export default function PackingList() {
+    return (
+        <section>
+            <h1>Sally Ride's Packing List</h1>
+            <ul>
+                <Item
+                    isPacked={true}
+                    name="Space suit"
+                />
+                <Item
+                    isPacked={true}
+                    name="Helmet with a golden leaf"
+                />
+                <Item
+                    isPacked={false}
+                    name="Photo of Tam"
+                />
+            </ul>
+        </section>
+    );
+}
