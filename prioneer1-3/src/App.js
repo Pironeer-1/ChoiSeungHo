@@ -18,17 +18,31 @@
 //     );
 // }
 
-export default function Bio() {
+// export default function Bio() {
+//     return (
+//         <div class="intro">
+//             <h1>Welcome to my website!</h1>
+//         </div>
+//     <p class="summary">
+//         You can find my thoughts here.
+//         <br><br>
+//             <b>And <i>pictures</b></i> of scientists!
+//     </p>
+// );
+// }
+
+export default function Avatar() {
+    const avatar = 'https://i.imgur.com/7vQD0fPs.jpg';
+    const description = 'Gregorio Y. Zara';
     return (
-        <div class="intro">
-            <h1>Welcome to my website!</h1>
-        </div>
-    <p class="summary">
-        You can find my thoughts here.
-        <br><br>
-            <b>And <i>pictures</b></i> of scientists!
-    </p>
-);
+        <img
+            className="avatar"
+            src={avatar}
+            alt={description}
+        />
+    );
 }
+
+
 
 
