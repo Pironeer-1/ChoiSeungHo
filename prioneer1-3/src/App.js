@@ -45,18 +45,70 @@
 
 
 
-const today = new Date();
+// const today = new Date();
+//
+// function formatDate(date) {
+//     return new Intl.DateTimeFormat(
+//         'en-US',
+//         { weekday: 'long' }
+//     ).format(date);
+// }
+//
+// export default function TodoList() {
+//     return (
+//         <h1>To Do List for {formatDate(today)}</h1>
+//     );
+// }
 
-function formatDate(date) {
-    return new Intl.DateTimeFormat(
-        'en-US',
-        { weekday: 'long' }
-    ).format(date);
-}
+// export default function TodoList() {
+//     return (
+//         <ul style={{
+//             backgroundColor: 'black',
+//             color: 'pink'
+//         }}>
+//             <li>Improve the videophone</li>
+//             <li>Prepare aeronautics lectures</li>
+//             <li>Work on the alcohol-fuelled engine</li>
+//         </ul>
+//     );
+// }
 
-export default function TodoList() {
+
+function Avatar({ person, size })  {
     return (
-        <h1>To Do List for {formatDate(today)}</h1>
+        <img
+            className="avatar"
+            src="https://i.imgur.com/1bX5QH6.jpg"
+            alt="Lin Lanying"
+            width={100}
+            height={100}
+        />
     );
 }
+
+export default function Profile({ person, size, isSepia, thickBorder }) {
+    return (
+        <div className="card">
+            <Avatar
+                person={person}
+                size={size}
+                isSepia={isSepia}
+                thickBorder={thickBorder}
+            />
+        </div>
+    );
+}
+
+
+
+
+// export default function Profile() {
+//     return (
+//         <Avatar
+//             person={{ name: 'Lin Lanying', imageId: '1bX5QH6' }}
+//             size={100}
+//         />
+//     );
+// }
+
 
