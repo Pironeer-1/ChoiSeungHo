@@ -242,29 +242,102 @@
 //     );
 // }
 
-const people = [{
-    id: 0,
-    name: 'Creola Katherine Johnson',
-    profession: 'mathematician',
-}, {
-    id: 1,
-    name: 'Mario José Molina-Pasquel Henríquez',
-    profession: 'chemist',
-}, {
-    id: 2,
-    name: 'Mohammad Abdus Salam',
-    profession: 'physicist',
-}, {
-    name: 'Percy Lavon Julian',
-    profession: 'chemist',
-}, {
-    name: 'Subrahmanyan Chandrasekhar',
-    profession: 'astrophysicist',
-}];
+// const people = [{
+//     id: 0,
+//     name: 'Creola Katherine Johnson',
+//     profession: 'mathematician',
+// }, {
+//     id: 1,
+//     name: 'Mario José Molina-Pasquel Henríquez',
+//     profession: 'chemist',
+// }, {
+//     id: 2,
+//     name: 'Mohammad Abdus Salam',
+//     profession: 'physicist',
+// }, {
+//     name: 'Percy Lavon Julian',
+//     profession: 'chemist',
+// }, {
+//     name: 'Subrahmanyan Chandrasekhar',
+//     profession: 'astrophysicist',
+// }];
+//
+// export default function List() {
+//      const listItems= people.map(person =>
+//         <li>{person}</li>
+//     );
+//     return <ul>{listItems}</ul>;
+// }
+//
 
-export default function List() {
-    const listItems = people.map(person =>
-        <li>{person}</li>
-    );
-    return <ul>{listItems}</ul>;
+// function Recipe({ drinkers }) {
+//     return (
+//         <ol>
+//             <li>Boil {drinkers} cups of water.</li>
+//             <li>Add {drinkers} spoons of tea and {0.5 * drinkers} spoons of spice.</li>
+//             <li>Add {0.5 * drinkers} cups of milk to boil and sugar to taste.</li>
+//         </ol>
+//     );
+// }
+//
+// export default function App() {
+//     return (
+//         <section>
+//             <h1>Spiced Chai Recipe</h1>
+//             <h2>For two</h2>
+//             <Recipe drinkers={2} />
+//             <h2>For a gathering</h2>
+//             <Recipe drinkers={4} />
+//         </section>
+//     );
+// }
+
+// function Recipe({ drinkers }) {
+//     return (
+//         <ol>
+//             <li>Boil {drinkers} cups of water.</li>
+//             <li>Add {drinkers} spoons of tea and {0.5 * drinkers} spoons of spice.</li>
+//             <li>Add {0.5 * drinkers} cups of milk to boil and sugar to taste.</li>
+//         </ol>
+//     );
+// }
+//
+// export default function App() {
+//     return (
+//         <section>
+//             <h1>Spiced Chai Recipe</h1>
+//             <h2>For two</h2>
+//             <Recipe drinkers={2} />
+//             <h2>For a gathering</h2>
+//             <Recipe drinkers={4} />
+//         </section>
+//     );
+// }
+//
+
+// function Cup({ guest }) {
+//     return <h2>Tea cup for guest #{guest}</h2>;
+// }
+//
+// export default function TeaSet() {
+//     return (
+//         <>
+//             <Cup guest={1} />
+//             <Cup guest={2} />
+//             <Cup guest={3} />
+//         </>
+//     );
+// }
+
+
+function Cup({ guest }) {
+    return <h2>Tea cup for guest #{guest}</h2>;
+}
+
+export default function TeaGathering() {
+    let cups = [];
+    for (let i = 1; i <= 12; i++) {
+        cups.push(<Cup key={i} guest={i} />);
+    }
+    return cups;
 }
