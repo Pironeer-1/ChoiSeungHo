@@ -46,8 +46,4 @@ ul {
   padding-left: 20px;
 }
 
-.Toolbar {
-  background: #aaa;
-  padding: 5px;
-}
-button { margin: 5px; }
+label, textarea { margin-bottom: 10px; display: block; }
