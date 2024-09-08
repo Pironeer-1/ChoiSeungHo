@@ -2,15 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import FriendsPage from './pages/FriendsPage';
 import ChatPage from './pages/ChatPage';
-import styled from 'styled-components'; // styled-components 라이브러리 import
+import styled from 'styled-components';
 
-// 아이콘은 예시입니다. 적절한 아이콘을 사용하세요.
 import { FaSearch, FaUserFriends, FaMusic } from 'react-icons/fa';
 
 const App = () => {
     return (
         <Router>
-            {/* 전체 컨테이너 */}
+            { }
             <Container>
                 {/* 헤더 */}
                 <Header>
@@ -18,8 +17,6 @@ const App = () => {
                     <FaUserFriends size={20} style={iconStyle} />
                     <FaMusic size={20} style={iconStyle} />
                 </Header>
-
-                {/* 네비게이션 메뉴 */}
 
 
                 {/* 페이지 내용 */}
