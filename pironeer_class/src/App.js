@@ -1,35 +1,66 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Routes, Link, useLocation} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes, Link, useLocation, Navigate} from 'react-router-dom';
 import FriendsPage from './pages/FriendsPage';
 import ChatPage from './pages/ChatPage';
 import styled from 'styled-components';
-import {FaUserFriends, FaComments, FaSearch, FaMusic, FaCommentDots, FaShoppingCart, FaEllipsisH} from 'react-icons/fa';
+import {
+    FaUserFriends,
+    FaComments,
+    FaSearch,
+    FaMusic,
+    FaCommentDots,
+    FaShoppingCart,
+    FaEllipsisH,
+    FaCog
+} from 'react-icons/fa';
 
 const App = () => {
     return (
         <Router>
             <Container>
-                {/* 헤더 */}
                 <Header>
-                    <FaSearch size={20} style={iconStyle}/>
-                    <FaUserFriends size={20} style={iconStyle}/>
-                    <FaMusic size={20} style={iconStyle}/>
+                    <HeaderContent/>
+                    <IconsWrapper>
+                        <FaSearch size={20} style={iconStyle}/>
+                        <FaUserFriends size={20} style={iconStyle}/>
+                        <FaMusic size={20} style={iconStyle}/>
+                        <FaCog size={20} style={iconStyle}/>
+                    </IconsWrapper>
                 </Header>
 
-                {/* 페이지 내용 */}
                 <Routes>
+                    <Route path="/" element={<Navigate to="/friends" />} />
                     <Route path="/friends" element={<FriendsPage/>}/>
                     <Route path="/chat" element={<ChatPage/>}/>
-                    <Route path="/openchat" element={<ChatPage/>}/>
-                    <Route path="/shopping" element={<ChatPage/>}/>
-                    <Route path="/more" element={<ChatPage/>}/>
+                    <Route path="/openchat" element={<OpenChatPage/>}/>
+                    <Route path="/shopping" element={<ShopPage/>}/>
+                    <Route path="/more" element={<MorePage/>}/>
                 </Routes>
 
-                {/* 푸터 */}
                 <Footer/>
             </Container>
         </Router>
     );
+};
+
+const HeaderContent = () => {
+    const location = useLocation();
+    const currentPath = location.pathname;
+
+    let text = '';
+    if (currentPath === '/friends') {
+        text = '친구';
+    } else if (currentPath === '/chat') {
+        text = '채팅';
+    }else if (currentPath === '/more') {
+        text = '더보기';
+    }else if (currentPath === '/openchat') {
+        text = '오픈채팅';
+    }else if (currentPath === '/shopping') {
+        text = '쇼핑';
+    }
+
+    return <HeaderText>{text}</HeaderText>;
 };
 
 // Footer 컴포넌트 정의
@@ -78,12 +109,25 @@ const Container = styled.div`
 
 const Header = styled.header`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ddd;
     width: 100%;
 `;
+
+const IconsWrapper = styled.div`
+    display: flex;
+    gap: 30px; 
+    margin-right: 17px;
+`;
+
+const HeaderText = styled.div`
+    margin-left: 15px;
+    font-size: 35px;
+    font-weight: bold;
+`;
+
 const FooterContainer = styled.footer`
     display: flex;
     justify-content: space-around;
@@ -106,10 +150,6 @@ const FooterLink = styled(Link)`
         margin-bottom: 4px;
         color: ${({isActive}) => (isActive ? 'black' : '#888')};
     }
-`;
-
-const IconWrapper = styled.div`
-    cursor: pointer;
 `;
 
 const iconStyle = {
