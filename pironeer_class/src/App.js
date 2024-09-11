@@ -13,6 +13,9 @@ import {
     FaEllipsisH,
     FaCog
 } from 'react-icons/fa';
+import OpenChatPage from "./pages/OpenChatPage";
+import ShopPage from "./pages/ShopPage";
+import MorePage from "./pages/MorePage";
 
 const App = () => {
     return (
@@ -29,7 +32,7 @@ const App = () => {
                 </Header>
 
                 <Routes>
-                    <Route path="/" element={<Navigate to="/friends" />} />
+                    <Route path="/" element={<Navigate to="/friends"/>}/>
                     <Route path="/friends" element={<FriendsPage/>}/>
                     <Route path="/chat" element={<ChatPage/>}/>
                     <Route path="/openchat" element={<OpenChatPage/>}/>
@@ -52,11 +55,11 @@ const HeaderContent = () => {
         text = '친구';
     } else if (currentPath === '/chat') {
         text = '채팅';
-    }else if (currentPath === '/more') {
+    } else if (currentPath === '/more') {
         text = '더보기';
-    }else if (currentPath === '/openchat') {
+    } else if (currentPath === '/openchat') {
         text = '오픈채팅';
-    }else if (currentPath === '/shopping') {
+    } else if (currentPath === '/shopping') {
         text = '쇼핑';
     }
 
@@ -118,7 +121,7 @@ const Header = styled.header`
 
 const IconsWrapper = styled.div`
     display: flex;
-    gap: 30px; 
+    gap: 30px;
     margin-right: 17px;
 `;
 
