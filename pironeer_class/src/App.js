@@ -1,5 +1,5 @@
-import React from 'react';
-import {BrowserRouter as Router, Route, Routes, Link, useLocation, Navigate} from 'react-router-dom';
+import React, { useState } from 'react'; // useState 추가
+import { BrowserRouter as Router, Route, Routes, Link, useLocation, Navigate } from 'react-router-dom';
 import FriendsPage from './pages/FriendsPage';
 import ChatPage from './pages/ChatPage';
 import styled from 'styled-components';
@@ -18,6 +18,9 @@ import ShopPage from "./pages/ShopPage";
 import MorePage from "./pages/MorePage";
 
 const App = () => {
+    // unreadMessages 상태 추가
+    const [unreadMessages, setUnreadMessages] = useState(226); // 예시로 226개의 안 읽은 메시지
+
     return (
         <Router>
             <Container>
@@ -40,7 +43,8 @@ const App = () => {
                     <Route path="/more" element={<MorePage/>}/>
                 </Routes>
 
-                <Footer/>
+                {/* unreadMessages 상태를 Footer에 전달 */}
+                <Footer unreadMessages={unreadMessages}/>
             </Container>
         </Router>
     );
@@ -66,8 +70,8 @@ const HeaderContent = () => {
     return <HeaderText>{text}</HeaderText>;
 };
 
-// Footer 컴포넌트 정의
-const Footer = () => {
+// Footer 컴포넌트에 unreadMessages를 props로 받도록 수정
+const Footer = ({ unreadMessages }) => {
     const location = useLocation();
     const currentPath = location.pathname;
 
@@ -78,9 +82,14 @@ const Footer = () => {
                 친구
             </FooterLink>
             <FooterLink to="/chat" isActive={currentPath === '/chat'}>
-                <FaComments size={24}/>
+                <IconContainer>
+                    <FaComments size={24}/>
+                    {/* unreadMessages 값이 0보다 크면 Badge 보여줌 */}
+                    {unreadMessages > 0 && <Badge>{unreadMessages}</Badge>}
+                </IconContainer>
                 채팅
             </FooterLink>
+
             <FooterLink to="/openchat" isActive={currentPath === '/openchat'}>
                 <FaCommentDots size={24}/>
                 오픈채팅
@@ -108,6 +117,22 @@ const Container = styled.div`
     height: 100vh;
     border: solid black;
     overflow: hidden;
+`;
+
+const IconContainer = styled.div`
+    position: relative;
+`;
+
+const Badge = styled.span`
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
 `;
 
 const Header = styled.header`
