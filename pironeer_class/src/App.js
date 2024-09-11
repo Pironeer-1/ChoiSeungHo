@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // useState 추가
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, useLocation, Navigate } from 'react-router-dom';
 import FriendsPage from './pages/FriendsPage';
 import ChatPage from './pages/ChatPage';
@@ -18,8 +18,8 @@ import ShopPage from "./pages/ShopPage";
 import MorePage from "./pages/MorePage";
 
 const App = () => {
-    // unreadMessages 상태 추가
-    const [unreadMessages, setUnreadMessages] = useState(226); // 예시로 226개의 안 읽은 메시지
+
+    const [unreadMessages, setUnreadMessages] = useState(29);
 
     return (
         <Router>
@@ -70,7 +70,7 @@ const HeaderContent = () => {
     return <HeaderText>{text}</HeaderText>;
 };
 
-// Footer 컴포넌트에 unreadMessages를 props로 받도록 수정
+
 const Footer = ({ unreadMessages }) => {
     const location = useLocation();
     const currentPath = location.pathname;
