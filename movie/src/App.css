@@ -1,0 +1,37 @@
+/* src/App.css */
+
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+.app-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie-card {
+  margin: 20px;
+  width: 200px;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+}
+
+.movie-detail {
+  text-align: center;
+}
+
+.movie-detail img {
+  width: 300px;
+  height: auto;
+}
