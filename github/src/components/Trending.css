@@ -1,0 +1,30 @@
+.notifications, .trending {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.notifications h4, .trending h4 {
+    font-size: 16px;
+    color: #24292e;
+    margin-bottom: 10px;
+}
+
+.trending ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.trending ul li {
+    font-size: 14px;
+    padding: 8px 0;
+    color: #0366d6;
+    cursor: pointer;
+}
+
+.trending ul li:hover {
+    background-color: #e1e4e8;
+    border-radius: 5px;
+}
