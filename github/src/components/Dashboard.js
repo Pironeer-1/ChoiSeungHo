@@ -1,4 +1,3 @@
-
 import React from "react";
 import Sidebar from "./Sidebar";
 import HomeFeed from "./HomeFeed";
@@ -8,13 +7,13 @@ import Notification from "./Notification";
 const Dashboard = () => {
     return (
         <div className="dashboard-container">
-            <Sidebar />
+            <Sidebar/>
             <div className="main-content">
-                <HomeFeed />
+                <HomeFeed/>
             </div>
             <div className="right-panel">
-                <Notification />
-                <Trending />
+                <Notification/>
+                <Trending/>
             </div>
         </div>
     );

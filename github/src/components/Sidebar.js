@@ -1,7 +1,7 @@
-
 import React from "react";
 import './Sidebar.css';
 import notificationImage from '../card.png';
+
 const Sidebar = () => {
     return (
         <div className="sidebar">
