@@ -1,0 +1,55 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f8fa;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e1e4e8;
+    height: 50px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    margin-right: 15px;
+}
+
+.github-logo {
+    color: #24292e;
+    margin-right: 10px;
+}
+
+.dashboard-title {
+    font-size: 18px;
+    color: #24292e;
+    font-weight: bold;
+}
+
+.header-search input {
+    width: 300px;
+    padding: 5px 10px;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.icon-btn:hover {
+    color: #0366d6;
+}
